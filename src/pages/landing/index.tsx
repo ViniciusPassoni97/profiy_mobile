@@ -6,7 +6,13 @@ import Ilustra from '../../assets/img/Ilustra.png'
 export default function Landing() {
     return(
         <View style={LandingStyle.container}>
-            <Image source={Ilustra}/>
+            <Image source={Ilustra} style={LandingStyle.banner}/>
+            <Text style={LandingStyle.title}>
+                Seja bem vindo, {'\n'}
+                <Text style={LandingStyle.titleBold}>
+                    O que deseja fazer ?
+                </Text>
+            </Text>
         </View>
     );
 }
