@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import Landing from './src/pages/landing/index';
 import AppLoading from 'expo-app-loading';
 import { Archivo_400Regular, Archivo_700Bold, useFonts } from '@expo-google-fonts/archivo';
 import { Poppins_400Regular, Poppins_600SemiBold } from '@expo-google-fonts/poppins';
+import AppStore from './src/routes/AppStack';
+
 
 export default function App() {
   let[fontsLoaded] = useFonts({
@@ -17,7 +18,7 @@ export default function App() {
   }else{
     return (
       <>
-          <Landing />
+          <AppStore />
           <StatusBar style="auto" />
       </>
     );
