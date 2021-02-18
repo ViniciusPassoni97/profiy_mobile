@@ -5,8 +5,16 @@ import Ilustra from '../../assets/img/Ilustra.png'
 import studyIcon from '../../assets/img/estudarIcon.png';
 import studyAulas from '../../assets/img/daraulas.png';
 import studyConnections from '../../assets/img/connections.png';
+import {useNavigation} from '@react-navigation/native';
+import {RectButton} from 'react-native-gesture-handler';
 
 export default function Landing() {
+    const navigation = useNavigation();
+
+    function HandleNavigation() {
+        navigation.navigate('GiveClasses');
+    }
+
     return(
         <View style={LandingStyle.container}>
             <Image source={Ilustra} style={LandingStyle.banner}/>
@@ -17,14 +25,14 @@ export default function Landing() {
                 </Text>
             </Text>
             <View style={LandingStyle.buttonContainer}>
-                <TouchableOpacity style={[LandingStyle.button,LandingStyle.buttonPrimary]}>
+                <RectButton style={[LandingStyle.button,LandingStyle.buttonPrimary]}>
                     <Image source={studyIcon}/>
                     <Text style={LandingStyle.buttonText}>Estudar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={[LandingStyle.button,LandingStyle.buttonSecondary]}>
+                </RectButton>
+                <RectButton onPress={HandleNavigation} style={[LandingStyle.button,LandingStyle.buttonSecondary]}>
                     <Image source={studyAulas}/>
                     <Text style={LandingStyle.buttonText}>Dar Aulas</Text>
-                </TouchableOpacity>
+                </RectButton>
             </View>
             <Text style={LandingStyle.totalConnections}>
                 Total de Conexões 25 {'\n'}
